@@ -14,6 +14,7 @@ function checkIfPrevResultExists(prevResult, parentDiv) {
     }
 }
 
+
 // Generate a random HEX code
 
 function randomHexCode() {
@@ -21,6 +22,7 @@ function randomHexCode() {
     const finalHex = `${randomColor}`;
     return finalHex;
 }
+
 
 // Add randomized HEX code to its respective div
 
@@ -38,6 +40,17 @@ function addRandomHexResult(classTag, divName, blockTag) {
 }
 
 
+// Add randomized array options to their respective divs
+
+function addRandomArrayResult(array, className, divName) {
+    const random = randomizeResults(array);
+    const result = document.createElement("p");
+    result.classList.add("results", className);
+    result.textContent = `${random}`;
+    divName.appendChild(result);
+}
+
+
 // Gender randomization
 
 const genderDiv = document.querySelector("#gender");
@@ -49,11 +62,7 @@ function randomGenderResult() {
     checkIfPrevResultExists(document.querySelector(".gender"), genderDiv)
 
     const genderArray = ["Male", "Female"];
-    const randomGender = randomizeResults(genderArray);
-    const result = document.createElement("p");
-    result.classList.add("results", "gender");
-    result.textContent = `${randomGender}`;
-    genderDiv.appendChild(result);
+    addRandomArrayResult(genderArray, "gender", genderDiv);
 }
 
 
@@ -83,16 +92,7 @@ function randomEyeColorResult() {
     checkIfPrevResultExists(document.querySelector(".eyeColor"), eyeColorDiv);
     checkIfPrevResultExists(document.querySelector(".eyeColorBlock"), eyeColorDiv);
 
-    const hexCode = randomHexCode();
-    const result = document.createElement("p");
-    result.classList.add("results", "eyeColor");
-    result.textContent = `${hexCode}`;
-    eyeColorDiv.appendChild(result);
-
-    const colorDiv = document.createElement("div");
-    colorDiv.classList.add("eyeColorBlock", "colorBlock");
-    eyeColorDiv.appendChild(colorDiv);
-    colorDiv.style.backgroundColor = `${hexCode}`;
+    addRandomHexResult("eyeColor", eyeColorDiv, "eyeColorBlock");
 }
 
 
@@ -107,16 +107,7 @@ function randomHairColorResult() {
     checkIfPrevResultExists(document.querySelector(".hairColor"), hairColorDiv);
     checkIfPrevResultExists(document.querySelector(".hairColorBlock"), hairColorDiv);
 
-    const hexCode = randomHexCode();
-    const result = document.createElement("p");
-    result.classList.add("results", "hairColor");
-    result.textContent = `${hexCode}`;
-    hairColorDiv.appendChild(result);
-
-    const colorDiv = document.createElement("div");
-    colorDiv.classList.add("hairColorBlock", "colorBlock");
-    hairColorDiv.appendChild(colorDiv);
-    colorDiv.style.backgroundColor = `${hexCode}`;
+    addRandomHexResult("hairColor", hairColorDiv, "hairColorBlock");
 }
 
 
