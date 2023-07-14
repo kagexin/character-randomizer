@@ -57,6 +57,11 @@ body {
     margin: 0;
 }
 
+.colorBlock {
+    height: 50px;
+    width: 50px;
+}
+
 .randomBtn {
     margin-left: 10px;
     border-radius: 20px;
