@@ -6,7 +6,7 @@ function randomizeResults(array) {
 }
 
 
-//Check if previous result exists
+// Check if previous result exists
 
 function checkIfPrevResultExists(prevResult, parentDiv) {
     if (prevResult) {
@@ -20,6 +20,21 @@ function randomHexCode() {
     const randomColor = "#000000".replace(/0/g,function(){return (~~(Math.random()*16)).toString(16);});
     const finalHex = `${randomColor}`;
     return finalHex;
+}
+
+// Add randomized HEX code to its respective div
+
+function addRandomHexResult(classTag, divName, blockTag) {
+    const hexCode = randomHexCode();
+    const result = document.createElement("p");
+    result.classList.add("results", classTag);
+    result.textContent = `${hexCode}`;
+    divName.appendChild(result);
+
+    const colorDiv = document.createElement("div");
+    colorDiv.classList.add(blockTag, "colorBlock");
+    divName.appendChild(colorDiv);
+    colorDiv.style.backgroundColor = `${hexCode}`
 }
 
 
@@ -53,16 +68,7 @@ function randomSkinColorResult() {
     checkIfPrevResultExists(document.querySelector(".skinColor"), skinColorDiv);
     checkIfPrevResultExists(document.querySelector(".skinColorBlock"), skinColorDiv)
 
-    const hexCode = randomHexCode();
-    const result = document.createElement("p");
-    result.classList.add("results", "skinColor");
-    result.textContent = `${hexCode}`;
-    skinColorDiv.appendChild(result);
-
-    const colorDiv = document.createElement("div");
-    colorDiv.classList.add("skinColorBlock", "colorBlock");
-    skinColorDiv.appendChild(colorDiv);
-    colorDiv.style.backgroundColor = `${hexCode}`;
+    addRandomHexResult("skinColor", skinColorDiv, "skinColorBlock");
 }
 
 
