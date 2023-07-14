@@ -17,8 +17,8 @@ function checkIfPrevResultExists(prevResult, parentDiv) {
 // Generate a random HEX code
 
 function randomHexCode() {
-    const randomColor = Math.floor(Math.random()*16777215).toString(16);
-    const finalHex = `#${randomColor}`;
+    const randomColor = "#000000".replace(/0/g,function(){return (~~(Math.random()*16)).toString(16);});
+    const finalHex = `${randomColor}`;
     return finalHex;
 }
 
