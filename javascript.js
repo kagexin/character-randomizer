@@ -10,6 +10,10 @@ function genderChoice() {
 }
 
 function genderResult() {
+    if (document.querySelector(".results")) {
+        const remove = document.querySelector(".results");
+        genderDiv.removeChild(remove);
+    }
     const gender = genderChoice();
     const result = document.createElement("p");
     result.classList.add("results");
