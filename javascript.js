@@ -1,20 +1,22 @@
-const randomBtn = document.querySelector("#genderBtn");
-const genderDiv = document.querySelector("#gender");
+// Randomize a result from an array
 
-randomBtn.addEventListener("click", () => genderResult());
-
-function genderChoice() {
-    const genderArray = ["Male", "Female"];
-    const randomGender = genderArray[Math.floor(Math.random() * genderArray.length)];
-    return randomGender;
+function randomizeResults(array) {
+    let randomResult = array[Math.floor(Math.random() * array.length)];
+    return randomResult;
 }
 
+// Gender randomization
+
+const genderBtn = document.querySelector("#genderBtn");
+const genderDiv = document.querySelector("#gender");
+
+genderBtn.addEventListener("click", () => genderResult());
+
 function genderResult() {
-    if (document.querySelector(".results")) {
-        const remove = document.querySelector(".results");
-        genderDiv.removeChild(remove);
-    }
-    const gender = genderChoice();
+    checkIfPrevResultExists(document.querySelector(".results"), genderDiv)
+
+    const genderArray = ["Male", "Female"];
+    const gender = randomizeResults(genderArray);
     const result = document.createElement("p");
     result.classList.add("results");
     result.textContent = `${gender}`;
@@ -23,3 +25,9 @@ function genderResult() {
 
 
 
+
+function checkIfPrevResultExists(prevResult, parentDiv) {
+    if (prevResult) {
+        parentDiv.removeChild(prevResult)
+    }
+}
