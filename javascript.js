@@ -241,6 +241,38 @@ function randomOutfitResult() {
         "Vibrant", "Victorian", "Vintage",
         "Winter"
     ];
-    
+
     addRandomArrayResult(outfitArray, "outfit", outfitDiv);
+}
+
+
+// Extra features randomization
+
+const extrasDiv = document.querySelector("#extras");
+const extrasBtn = document.querySelector("#extrasBtn");
+
+extrasBtn.addEventListener("click", () => randomExtrasResult());
+
+function randomExtrasResult() {
+    checkIfPrevResultExists(document.querySelector(".extras"), extrasDiv)
+
+    const extrasArray = [
+        "Has a tail",
+        "Has animal ears",
+        "Has freckles",
+        "Has piercings",
+        "Has scars",
+        "Has tattoos",
+        "Has wings",
+        "Is blind",
+        "Wears a face mask",
+        "Wears an eyepatch",
+        "Wields a gun",
+        "Wields a greatsword",
+        "Wields a knife",
+        "Wields a spear",
+        "Wields a sword",
+    ];
+
+    addRandomArrayResult(extrasArray, "extras", extrasDiv);
 }
