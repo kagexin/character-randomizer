@@ -212,3 +212,35 @@ function randomPersonalityResult() {
     result.textContent = `${randomTraits}`;
     personalityDiv.appendChild(result);
 }
+
+
+// Outfit randomization
+
+const outfitDiv = document.querySelector("#outfit");
+const outfitBtn = document.querySelector("#outfitBtn");
+
+outfitBtn.addEventListener("click", () => randomOutfitResult());
+
+function randomOutfitResult() {
+    checkIfPrevResultExists(document.querySelector(".outfit"), outfitDiv)
+
+    const outfitArray = [
+        "Academia", "Androgynous", "Autumnal",
+        "Biker", "Bright", "Business",
+        "Casual", "Cottagecore", "Cyperpunk",
+        "Dark",
+        "Edgy", "Elegant",
+        "Feminine", "Flamboyant", "Formal", "Futuristic",
+        "Goth", "Grunge",
+        "Loungewear",
+        "Masculine", "Military", "Minimalistic", "Modest",
+        "Pastel", "Psychadelic", "Punk",
+        "Retro", "Royal",
+        "Sophisticated", "Sporty",  "Steampunk", "Streetwear", "Summer", "Swimwear",
+        "Techwear",
+        "Vibrant", "Victorian", "Vintage",
+        "Winter"
+    ];
+    
+    addRandomArrayResult(outfitArray, "outfit", outfitDiv);
+}
