@@ -136,6 +136,7 @@ function randomSkinColorResult() {
 
 const eyeColorDiv = document.querySelector("#eyes");
 const eyeColorBtn = document.querySelector("#eyeBtn");
+const naturalEyeColorBox = document.querySelector("#naturalEyeColor");
 
 eyeColorBtn.addEventListener("click", () => randomEyeColorResult());
 
@@ -143,7 +144,23 @@ function randomEyeColorResult() {
     checkIfPrevResultExists(document.querySelector(".eyeColor"), eyeColorDiv);
     checkIfPrevResultExists(document.querySelector(".eyeColorBlock"), eyeColorDiv);
 
-    addRandomHexResult("eyeColor", eyeColorDiv, "eyeColorBlock");
+    const naturalEyeColorArray = [
+        // brown
+        "#634e34", "#5e481e", "#542a0e", "#63390f", "#603101",
+        "#451800", "#814f12", "#6d481a", "#673f0d", "#47331e",
+
+        // blue
+        "#2e536f", "#A1CAF1", "#0D98BA", "#0D5176", "#81badd",
+        "#81b1ce", "#579ec9", "#a3bdd4", "#354c5e", "#a3cfca",
+
+        // green
+        "#3d671d", "#1c7847", "#497665", "#8D9B87", "#7e8546",
+        "#787e3f", "#7db49f", "#405449", "#53645c", "#a9e09f",
+
+        // gray
+        "#989696", "#7c7c7c", "#6c7d8f", "#5a6171", "#b2b5b1"
+    ]
+    addNaturalColorResult(naturalEyeColorBox, naturalEyeColorArray, "eyeColor", eyeColorDiv, "eyeColorBlock");
 }
 
 
