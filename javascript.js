@@ -168,6 +168,7 @@ function randomEyeColorResult() {
 
 const hairColorDiv = document.querySelector("#hairColor");
 const hairColorBtn = document.querySelector("#hairColorBtn");
+const naturalHairColorBox = document.querySelector("#naturalHairColor");
 
 hairColorBtn.addEventListener("click", () => randomHairColorResult());
 
@@ -175,7 +176,25 @@ function randomHairColorResult() {
     checkIfPrevResultExists(document.querySelector(".hairColor"), hairColorDiv);
     checkIfPrevResultExists(document.querySelector(".hairColorBlock"), hairColorDiv);
 
-    addRandomHexResult("hairColor", hairColorDiv, "hairColorBlock");
+    const naturalHairColorArray = [
+       // brown
+       "#583322", "#714721", "#744729", "#412922", "#8a6030", 
+       "#a47a3f", "#a15d1a", "#7e4d1e", "#57330f", "#4b3621",
+
+       // blonde 
+       "#fde968",  "#b48b57", "#c19249", "#d6b370", "#b58143",
+       "#fffbb6", "#fdee87", "#b29258", "#dac586", "#fafad2",
+
+       // ginger
+       "#8c4a06", "#a55728", "#ea871e", "#d5750a", "#c06205",
+       "#ac4f00", "#7e3a06",
+
+       // gray, black
+       "#7b746e", "#838794", "#6e727a", "#2c1b18", "#181818",
+       "#1b1b1b", "#1a1110", "#160604", "#0c0803", "#494949"
+
+    ]
+    addNaturalColorResult(naturalHairColorBox, naturalHairColorArray, "hairColor", hairColorDiv, "hairColorBlock");
 }
 
 
