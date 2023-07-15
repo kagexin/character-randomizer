@@ -276,3 +276,22 @@ function randomExtrasResult() {
 
     addRandomArrayResult(extrasArray, "extras", extrasDiv);
 }
+
+
+// Randomize all button
+
+const randomAllBtn = document.querySelector(".randomAllBtn");
+
+randomAllBtn.addEventListener("click", () => randomAllResult());
+
+function randomAllResult() {
+    randomGenderResult();
+    randomSkinColorResult();
+    randomEyeColorResult();
+    randomHairColorResult();
+    randomHairLengthResult();
+    randomHeightResult();
+    randomPersonalityResult();
+    randomOutfitResult();
+    randomExtrasResult();
+}
