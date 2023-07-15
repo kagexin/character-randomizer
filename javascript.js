@@ -122,9 +122,31 @@ function randomHairLengthResult() {
     checkIfPrevResultExists(document.querySelector(".hairLength"), hairLengthDiv)
 
     const hairLengthArray = ["Short", "Medium", "Long"];
-    const randomHairLength = randomizeResults(hairLengthArray);
+    addRandomArrayResult(hairLengthArray, "hairLength", hairLengthDiv);
+}
+
+
+// Height randomization
+
+const heightDiv = document.querySelector("#height");
+const heightBtn = document.querySelector("#heightBtn");
+
+heightBtn.addEventListener("click", () => randomHeightResult());
+
+function randomHeightResult() {
+    checkIfPrevResultExists(document.querySelector(".height"), heightDiv);
+
+    const feetArray = ["4", "5", "6"]
+    const inchesArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"]
+    
+    const randomFootValue = feetArray[Math.floor(Math.random() * feetArray.length)];
+    const randomInchValue = inchesArray[Math.floor(Math.random() * inchesArray.length)];
+
+    const randomHeight = `${randomFootValue}'${randomInchValue}"`;
+
+
     const result = document.createElement("p");
-    result.classList.add("results", "hairLength");
-    result.textContent = `${randomHairLength}`;
-    hairLengthDiv.appendChild(result);
+    result.classList.add("results", "height");
+    result.textContent = `${randomHeight}`;
+    heightDiv.appendChild(result);
 }
