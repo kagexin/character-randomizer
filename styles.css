@@ -53,6 +53,11 @@ body {
     display: flex;
 }
 
+.natural {
+    font-size: 15px;
+    font-weight: 300;
+}
+
 .results {
     margin: 0;
 }
@@ -99,3 +104,6 @@ body {
     background-color: rgb(34, 110, 172);
 }
 
+.naturalColorOnly {
+    display: flex;
+}

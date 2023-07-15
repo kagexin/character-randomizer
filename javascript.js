@@ -26,7 +26,7 @@ function randomHexCode() {
 
 // Add randomized HEX code to its respective div
 
-function addRandomHexResult(classTag, divName, blockTag) {
+function addRandomHexResult(classTag, divName, blockClass) {
     const hexCode = randomHexCode();
     const result = document.createElement("p");
     result.classList.add("results", classTag);
@@ -34,7 +34,7 @@ function addRandomHexResult(classTag, divName, blockTag) {
     divName.appendChild(result);
 
     const colorDiv = document.createElement("div");
-    colorDiv.classList.add(blockTag, "colorBlock");
+    colorDiv.classList.add(blockClass, "colorBlock");
     divName.appendChild(colorDiv);
     colorDiv.style.backgroundColor = `${hexCode}`
 }
@@ -48,6 +48,26 @@ function addRandomArrayResult(array, className, divName) {
     result.classList.add("results", className);
     result.textContent = `${random}`;
     divName.appendChild(result);
+}
+
+
+// Add funtionality for generating a random natural color
+
+function addNaturalColorResult(checkbox, array, className, divName, blockClass) {
+    if (!checkbox.checked) {
+        addRandomHexResult(className, divName, blockClass);
+    } else {
+        const naturalColor = randomizeResults(array);
+        const result = document.createElement("p");
+        result.classList.add("results", className);
+        result.textContent = `${naturalColor}`;
+        divName.appendChild(result);
+
+        const colorDiv = document.createElement("div");
+        colorDiv.classList.add(blockClass, "colorBlock");
+        divName.appendChild(colorDiv);
+        colorDiv.style.backgroundColor = `${naturalColor}`;
+    }
 }
 
 
@@ -70,14 +90,21 @@ function randomGenderResult() {
 
 const skinColorDiv = document.querySelector("#skin");
 const skinColorBtn = document.querySelector("#skinBtn")
+const naturalSkinColorBox = document.querySelector("#naturalSkinColor");
 
 skinColorBtn.addEventListener("click", () => randomSkinColorResult());
 
 function randomSkinColorResult() {
     checkIfPrevResultExists(document.querySelector(".skinColor"), skinColorDiv);
-    checkIfPrevResultExists(document.querySelector(".skinColorBlock"), skinColorDiv)
+    checkIfPrevResultExists(document.querySelector(".skinColorBlock"), skinColorDiv);
 
-    addRandomHexResult("skinColor", skinColorDiv, "skinColorBlock");
+    const naturalSkinColorArray = [
+        "#FFFFFF",
+        "#000000",
+        "#D00D00",
+    ]
+    addNaturalColorResult(naturalSkinColorBox, naturalSkinColorArray, "skinColor", skinColorDiv, "skinColorBlock");
+    
 }
 
 
