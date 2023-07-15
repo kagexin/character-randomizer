@@ -136,17 +136,79 @@ heightBtn.addEventListener("click", () => randomHeightResult());
 function randomHeightResult() {
     checkIfPrevResultExists(document.querySelector(".height"), heightDiv);
 
-    const feetArray = ["4", "5", "6"]
-    const inchesArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"]
+    const feetArray = ["4", "5", "6"];
+    const inchesArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"];
     
     const randomFootValue = feetArray[Math.floor(Math.random() * feetArray.length)];
     const randomInchValue = inchesArray[Math.floor(Math.random() * inchesArray.length)];
 
     const randomHeight = `${randomFootValue}'${randomInchValue}"`;
 
-
     const result = document.createElement("p");
     result.classList.add("results", "height");
     result.textContent = `${randomHeight}`;
     heightDiv.appendChild(result);
+}
+
+
+// Personality randomization
+
+const personalityDiv = document.querySelector("#personality");
+const personalityBtn = document.querySelector("#personalityBtn");
+
+personalityBtn.addEventListener("click", () => randomPersonalityResult());
+
+function randomPersonalityResult() {
+    checkIfPrevResultExists(document.querySelector(".personality"), personalityDiv);
+
+    const posititvesArray = [
+        "Adventurous", "Athletic",
+        "Calm", "Caring", "Charismatic", "Charming", "Cheerful", "Clever", "Compassionate", "Confident", "Creative", "Curious",
+        "Daring", "Decisive", "Dedicated", "Dramatic",
+        "Empathetic", "Energetic",  "Enthusiastic",
+        "Friendly",
+        "Generous", "Gentle",
+        "Hardworking", "Honest", "Humble", "Humorous",
+        "Imaginative",  "Independent", "Insightful", "Intelligent",
+        "Loyal",
+        "Modest",
+        "Observant", "Optimistic", "Organized",
+        "Passionate", "Patient",  "Perceptive", "Persuasive", "Playful", "Protective",
+        "Rational", "Reliable", "Romantic",
+        "Selfless", "Self-sufficent", "Sensitive", "Sentimental", "Serious", "Sociable", "Stoic", "Strong", "Sympathetic",
+    ]
+
+    const negativesArray = [
+        "Abrasive", "Aloof", "Angry", "Anxious", "Apathetic", "Argumentative", "Arrogant", "Assertive",
+        "Blunt",
+        "Careless",  "Childish", "Clumsy",  "Compulsive", "Conceited", "Critical", "Crude", "Cynical",
+        "Deceitful", "Demanding", "Destructive", "Devious", "Dishonest", "Disloyal",
+        "Egocentric",  "Envious",
+        "Fiery", "Forgetful",
+        "Greedy", "Gullible",
+        "Hesitant", "Hostile",
+        "Ignorant", "Impatient", "Impulsive", "Inconsiderate", "Indecisive", "Insecure", "Insensitive", "Irrational", "Irresponsible", "Irritable",
+        "Lazy",
+        "Malicious", "Masochistic", "Melancholic", "Misguided",
+        "Naive", "Nihilistic",
+        "Obesessive",
+        "Passive", "Petty", "Possessive",
+        "Regretful", "Resentful", "Rigid",
+        "Sadistic", "Secretive", "Selfish", "Shallow", "Sly", "Steely", "Submissive",
+        "Thievish", "Timid",
+        "Unfriendly", "Unrealistic", "Unreliable", "Unstable",
+        "Vindictive",
+        "Weak"
+    ]
+
+    const randomPositive = posititvesArray[Math.floor(Math.random() * posititvesArray.length)];
+    const randomPositive2 = posititvesArray[Math.floor(Math.random() * posititvesArray.length)];
+    const randomNegative = negativesArray[Math.floor(Math.random() * negativesArray.length)];
+
+    const randomTraits = `${randomPositive}, ${randomPositive2}, ${randomNegative}`;
+
+    const result = document.createElement("p");
+    result.classList.add("results", "personality");
+    result.textContent = `${randomTraits}`;
+    personalityDiv.appendChild(result);
 }
