@@ -99,36 +99,14 @@ function randomSkinColorResult() {
     checkIfPrevResultExists(document.querySelector(".skinColorBlock"), skinColorDiv);
 
     const naturalSkinColorArray = [
-        "#DBA974",
-        "#E3C08B",
-        "#F1D9B7",
-        "#F6E5C4",
-        "#f7c19b",
-        "#ebab7f",
-        "#d39972",
-        "#bd8966",
-        "#8d5524",
-        "#c68642",
-        "#e0ac69",
-        "#f1c27d",
-        "#ffdbac",
-        "#e3b499",
-        "#e6bca3",
-        "#e9c3ad",
-        "#ebcbb8",
-        "#f1dacc",
-        "#BF9169",
-        "#8C644D",
-        "#593123",
-        "#714937",
-        "#321B0F",
-        "#5e3526",
-        "#9b6f56",
-        "#583c34",
-        "#dcb48c",
+        "#DBA974", "#E3C08B", "#F1D9B7", "#F6E5C4", "#f7c19b",
+        "#ebab7f", "#d39972", "#bd8966", "#8d5524", "#c68642",
+        "#e0ac69", "#f1c27d", "#ffdbac", "#e3b499", "#e6bca3",
+        "#e9c3ad", "#ebcbb8", "#f1dacc", "#BF9169", "#8C644D",
+        "#593123", "#714937", "#321B0F", "#5e3526", "#9b6f56",
+        "#583c34", "#dcb48c", "#f7e8be", "#d1a888", "#9c785c"
     ]
     addNaturalColorResult(naturalSkinColorBox, naturalSkinColorArray, "skinColor", skinColorDiv, "skinColorBlock");
-    
 }
 
 
@@ -189,7 +167,7 @@ function randomHairColorResult() {
        "#8c4a06", "#a55728", "#ea871e", "#d5750a", "#c06205",
        "#ac4f00", "#7e3a06",
 
-       // gray, black
+       // gray & black
        "#7b746e", "#838794", "#6e727a", "#2c1b18", "#181818",
        "#1b1b1b", "#1a1110", "#160604", "#0c0803", "#494949"
 
@@ -332,7 +310,6 @@ function randomOutfitResult() {
         "Vibrant", "Victorian", "Vintage",
         "Winter"
     ];
-
     addRandomArrayResult(outfitArray, "outfit", outfitDiv);
 }
 
@@ -364,7 +341,6 @@ function randomExtrasResult() {
         "Wields a spear",
         "Wields a sword",
     ];
-
     addRandomArrayResult(extrasArray, "extras", extrasDiv);
 }
 
