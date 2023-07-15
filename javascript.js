@@ -99,9 +99,33 @@ function randomSkinColorResult() {
     checkIfPrevResultExists(document.querySelector(".skinColorBlock"), skinColorDiv);
 
     const naturalSkinColorArray = [
-        "#FFFFFF",
-        "#000000",
-        "#D00D00",
+        "#DBA974",
+        "#E3C08B",
+        "#F1D9B7",
+        "#F6E5C4",
+        "#f7c19b",
+        "#ebab7f",
+        "#d39972",
+        "#bd8966",
+        "#8d5524",
+        "#c68642",
+        "#e0ac69",
+        "#f1c27d",
+        "#ffdbac",
+        "#e3b499",
+        "#e6bca3",
+        "#e9c3ad",
+        "#ebcbb8",
+        "#f1dacc",
+        "#BF9169",
+        "#8C644D",
+        "#593123",
+        "#714937",
+        "#321B0F",
+        "#5e3526",
+        "#9b6f56",
+        "#583c34",
+        "#dcb48c",
     ]
     addNaturalColorResult(naturalSkinColorBox, naturalSkinColorArray, "skinColor", skinColorDiv, "skinColorBlock");
     
