@@ -184,7 +184,7 @@ const hairLengthBtn = document.querySelector("#hairLengthBtn");
 hairLengthBtn.addEventListener("click", () => randomHairLengthResult());
 
 function randomHairLengthResult() {
-    checkIfPrevResultExists(document.querySelector(".hairLength"), hairLengthDiv)
+    checkIfPrevResultExists(document.querySelector(".hairLength"), hairLengthDiv);
 
     const hairLengthArray = ["Short", "Medium", "Long"];
     addRandomArrayResult(hairLengthArray, "hairLength", hairLengthDiv);
