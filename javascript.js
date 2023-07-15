@@ -202,8 +202,12 @@ function randomPersonalityResult() {
     ]
 
     const randomPositive = posititvesArray[Math.floor(Math.random() * posititvesArray.length)];
-    const randomPositive2 = posititvesArray[Math.floor(Math.random() * posititvesArray.length)];
+    let randomPositive2 = posititvesArray[Math.floor(Math.random() * posititvesArray.length)];
     const randomNegative = negativesArray[Math.floor(Math.random() * negativesArray.length)];
+
+    if (randomPositive2 == randomPositive) {
+        randomPositive2 = posititvesArray[Math.floor(Math.random() * posititvesArray.length)];
+    }
 
     const randomTraits = `${randomPositive}, ${randomPositive2}, ${randomNegative}`;
 
